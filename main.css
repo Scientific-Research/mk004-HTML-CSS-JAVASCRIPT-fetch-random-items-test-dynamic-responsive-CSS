@@ -1,12 +1,67 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   background-color: #333;
-  color: azure;
-
-  margin: 1rem;
+  color: #ccc;
+  font-family: sans-serif;
+  padding: 0 1rem;
 }
+
+@media screen and (max-width: 767px) {
+  .books {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .books {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1324px) {
+  .books {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.books {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.books .book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.books .book img {
+  width: 100px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-shadow: 1px 1px 10px #999;
+          box-shadow: 1px 1px 10px #999;
+}
+
+.books .book .info .title {
+  color: #cfcf7d;
+  font-size: 1.2rem;
+}
+
+.books .book .info .description {
+  color: #999;
+  font-style: italic;
+}
+/*# sourceMappingURL=main.css.map */

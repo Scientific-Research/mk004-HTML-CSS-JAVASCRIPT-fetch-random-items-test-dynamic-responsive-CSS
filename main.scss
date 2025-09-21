@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #ccc;
+  font-family: sans-serif;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .books {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .books {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1324px) {
+  .books {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.books {
+  display: grid;
+  grid-gap: 2rem;
+
+  .book {
+    display: flex;
+    gap: 1rem;
+
+    img {
+      width: 100px;
+      height: fit-content;
+      box-shadow: 1px 1px 10px #999;
+    }
+
+    .info {
+      .title {
+        color: rgb(207, 207, 125);
+        font-size: 1.2rem;
+      }
+
+      .description {
+        color: #999;
+        font-style: italic;
+      }
+    }
+  }
+}
