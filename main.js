@@ -2,7 +2,8 @@ const contentElem = document.querySelector('.content');
 
 const randomize_book_order = true;
 const randomize_number_of_books = true;
-let maximum_number_of_books = 999;
+let maximum_number_of_books = 10;
+let _books = [];
 
 (async () => {
   const response = await fetch(
@@ -23,13 +24,20 @@ let maximum_number_of_books = 999;
   let number_of_books = maximum_number_of_books;
   if (randomize_number_of_books) {
     number_of_books = Math.floor(Math.random() * maximum_number_of_books) + 1;
+    console.log(number_of_books);
   }
 
-  books = books.filter((m, i) => i < number_of_books);
+  // books = books.filter((m, i) => i < number_of_books);
+  for (let i = 0; i < number_of_books; i++) {
+    // const element = array[i];
+    // books = books[i];
+    _books[i] = books[i];
+    console.log(_books);
+  }
 
   contentElem.innerHTML = `
     <div class="books">
-        ${books
+        ${_books
           .map((book) => {
             return `
         <div class="book">
