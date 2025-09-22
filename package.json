@@ -1,0 +1,13 @@
+{
+  "name": "mk004-html-css-typescript-fetch-random-items-test-dynamic-responsive-css",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:main": "tsc main.tsx --target ES2020 --lib DOM,ES2020"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
